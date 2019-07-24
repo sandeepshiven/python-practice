@@ -9,7 +9,7 @@ Created on Thu Jul  4 20:09:42 2019
 print('hello')
 string='abcdefghijklmnopqrstuvwxyz'
 print('sliced string:')
-print(string[3:10:2])
+print(string[4:])
 print("length of srtring:")
 print(len(string))
 print("reversed string")

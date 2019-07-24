@@ -33,18 +33,3 @@ print(f'{my_dict.keys()}' )  # shows keys in a dictionary
 print(f'{my_dict.values()}') # shows values inside the dictionary
 
 print(f'{my_dict.items()}') # shows keys and values in pair
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
