@@ -14,7 +14,7 @@ print(f"Length of the list: {len(my_list)}")
 
 print(f"Now element at index 5:{my_list[5]}")
 
-print(f"Now some slicing examples:- \n{my_list[2:]}\n{my_list[:4]}\n{my_list[2:4]}")
+print(f"Now some slicing examples:- \n{my_list[2::2]}\n{my_list[:4]}\n{my_list[2:4]}")
 
 print(f"Now a example of concatenation:\n{my_list+['sandeep']}") # this does not changes the original list
 

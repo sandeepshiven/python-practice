@@ -15,8 +15,8 @@ list1 = [1,2,3,4,5,6,7,8,9]
 shuffle(list1)
 
 print(list1)
-
-print(randint(80,120))
+for i in range (100):
+    print(randint(1,2))
 
 
 
