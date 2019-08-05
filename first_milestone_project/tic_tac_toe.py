@@ -93,9 +93,7 @@ def win_check(check,initial_player_value3,initial_player_value4):
             game_status = "Player X wins"
         elif ((['X','X','X'] == check[::4]) or (['X','X','X'] == check[2:7:2])):
             game_status = "Player X wins"
-        else:
-            game_status = "_"
-        
+                
     else:
         if ((['O','O','O'] == check[:3]) or (['O','O','O'] == check[3:6]) or (['O','O','O'] == check[6:])):
             game_status = "Player O wins"
@@ -103,8 +101,7 @@ def win_check(check,initial_player_value3,initial_player_value4):
             game_status = "Player O wins"
         elif ((['O','O','O'] == check[::4]) or (['O','O','O'] == check[2:7:2])):
             game_status = "Player O wins"
-        else:
-            game_status = "_"
+            
         
     if initial_player_value4 == 'O':
         if ((['O','O','O'] == check[:3]) or (['O','O','O'] == check[3:6]) or (['O','O','O'] == check[6:])):
@@ -113,8 +110,7 @@ def win_check(check,initial_player_value3,initial_player_value4):
             game_status = "Player O wins"
         elif ((['O','O','O'] == check[::4]) or (['O','O','O'] == check[2:7:2])):
             game_status = "Player O wins"
-        else:
-            game_status = "_"
+       
         
     else :
         if ((['X','X','X'] == check[:3]) or (['X','X','X'] == check[3:6]) or (['X','X','X'] == check[6:])):
@@ -123,8 +119,7 @@ def win_check(check,initial_player_value3,initial_player_value4):
             game_status = "Player X wins"
         elif ((['X','X','X'] == check[::4]) or (['X','X','X'] == check[2:7:2])):
             game_status = "Player X wins"
-        else:
-            game_status = "_"
+       
     draw_check = ''.join(str(x) for x in check)
     print(draw_check)
     #sleep(5)
