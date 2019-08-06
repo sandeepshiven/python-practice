@@ -86,48 +86,50 @@ def win_check(check,initial_player_value3,initial_player_value4):
    # print(check)
     
     global game_status
-    if initial_player_value3 == 'X':
-        if ((['X','X','X'] == check[:3]) or (['X','X','X'] == check[3:6]) or (['X','X','X'] == check[6:])):
-            game_status = "Player X wins"
-        elif ((['X','X','X'] == check[::3]) or (['X','X','X'] == check[1::3]) or (['X','X','X'] == check[2::3])):
-            game_status = "Player X wins"
-        elif ((['X','X','X'] == check[::4]) or (['X','X','X'] == check[2:7:2])):
-            game_status = "Player X wins"
+    global turns
+    if game_status == '_':
+        if initial_player_value3 == 'X':
+            if ((['X','X','X'] == check[:3]) or (['X','X','X'] == check[3:6]) or (['X','X','X'] == check[6:])):
+                game_status = "Player X wins"
+            elif ((['X','X','X'] == check[::3]) or (['X','X','X'] == check[1::3]) or (['X','X','X'] == check[2::3])):
+                game_status = "Player X wins"
+            elif ((['X','X','X'] == check[::4]) or (['X','X','X'] == check[2:7:2])):
+                game_status = "Player X wins"
                 
-    else:
-        if ((['O','O','O'] == check[:3]) or (['O','O','O'] == check[3:6]) or (['O','O','O'] == check[6:])):
-            game_status = "Player O wins"
-        elif ((['O','O','O'] == check[::3]) or (['O','O','O'] == check[1::3]) or (['O','O','O'] == check[2::3])):
-            game_status = "Player O wins"
-        elif ((['O','O','O'] == check[::4]) or (['O','O','O'] == check[2:7:2])):
-            game_status = "Player O wins"
+        elif initial_player_value3 == 'O':
+            if ((['O','O','O'] == check[:3]) or (['O','O','O'] == check[3:6]) or (['O','O','O'] == check[6:])):
+                game_status = "Player O wins"
+            elif ((['O','O','O'] == check[::3]) or (['O','O','O'] == check[1::3]) or (['O','O','O'] == check[2::3])):
+                game_status = "Player O wins"
+            elif ((['O','O','O'] == check[::4]) or (['O','O','O'] == check[2:7:2])):
+                game_status = "Player O wins"
             
-        
-    if initial_player_value4 == 'O':
-        if ((['O','O','O'] == check[:3]) or (['O','O','O'] == check[3:6]) or (['O','O','O'] == check[6:])):
-            game_status = "Player O wins"
-        elif ((['O','O','O'] == check[::3]) or (['O','O','O'] == check[1::3]) or (['O','O','O'] == check[2::3])):
-            game_status = "Player O wins"
-        elif ((['O','O','O'] == check[::4]) or (['O','O','O'] == check[2:7:2])):
-            game_status = "Player O wins"
+    if game_status == '_':    
+        if initial_player_value4 == 'O':
+            if ((['O','O','O'] == check[:3]) or (['O','O','O'] == check[3:6]) or (['O','O','O'] == check[6:])):
+                game_status = "Player O wins"
+            elif ((['O','O','O'] == check[::3]) or (['O','O','O'] == check[1::3]) or (['O','O','O'] == check[2::3])):
+                game_status = "Player O wins"
+            elif ((['O','O','O'] == check[::4]) or (['O','O','O'] == check[2:7:2])):
+                game_status = "Player O wins"
        
         
-    else :
-        if ((['X','X','X'] == check[:3]) or (['X','X','X'] == check[3:6]) or (['X','X','X'] == check[6:])):
-            game_status = "Player X wins"
-        elif ((['X','X','X'] == check[::3]) or (['X','X','X'] == check[1::3]) or (['X','X','X'] == check[2::3])):
-            game_status = "Player X wins"
-        elif ((['X','X','X'] == check[::4]) or (['X','X','X'] == check[2:7:2])):
-            game_status = "Player X wins"
+        elif initial_player_value4 == 'X' :
+            if ((['X','X','X'] == check[:3]) or (['X','X','X'] == check[3:6]) or (['X','X','X'] == check[6:])):
+                game_status = "Player X wins"
+            elif ((['X','X','X'] == check[::3]) or (['X','X','X'] == check[1::3]) or (['X','X','X'] == check[2::3])):
+                game_status = "Player X wins"
+            elif ((['X','X','X'] == check[::4]) or (['X','X','X'] == check[2:7:2])):
+                game_status = "Player X wins"
        
     draw_check = ''.join(str(x) for x in check)
-    print(draw_check)
+    #print(draw_check)
     #sleep(5)
     if draw_check.isalpha():
         game_status ="Game draws"
+        turns = [1,2,3,4,5,6,7,8,9]
     
-    else:
-        game_status= "_"
+    
     
         
     
@@ -164,7 +166,7 @@ while replay == "yes":
     else:
         player_turn(initial_player_value[1],initial_player_value[0])
         game_board(turns)
-        win_check(turns,initial_player_value[0],initial_player_value[1])
+        win_check(turns,initial_player_value[1],initial_player_value[0])
     
     #win_check(turns,tuple(initial_player_value))    
     if game_status != '_':
