@@ -62,6 +62,7 @@ def clear():
 def player_turn(initial_player_value0,initial_player_value1):
     clear()
     global turns
+    global game_status
     game_board(turns)
     print(f"Player {initial_player_value0} turn")
     print("Enter position")
@@ -70,6 +71,9 @@ def player_turn(initial_player_value0,initial_player_value1):
     turns.insert(int(player1_input)-1,initial_player_value0)
     clear()
     game_board(turns)
+    win_check(turns,initial_player_value0,initial_player_value1)
+    if game_status != '_':
+        return 0
     
     print(f"Player {initial_player_value1} turn")
     print("Enter position")
@@ -78,6 +82,9 @@ def player_turn(initial_player_value0,initial_player_value1):
     turns.insert(int(player2_input)-1,initial_player_value1)
     clear()
     game_board(turns)
+    win_check(turns,initial_player_value0,initial_player_value1)
+    if game_status != '_':
+        return 0
     
     
     
@@ -95,6 +102,7 @@ def win_check(check,initial_player_value3,initial_player_value4):
                 game_status = "Player X wins"
             elif ((['X','X','X'] == check[::4]) or (['X','X','X'] == check[2:7:2])):
                 game_status = "Player X wins"
+            
                 
         elif initial_player_value3 == 'O':
             if ((['O','O','O'] == check[:3]) or (['O','O','O'] == check[3:6]) or (['O','O','O'] == check[6:])):
@@ -104,6 +112,7 @@ def win_check(check,initial_player_value3,initial_player_value4):
             elif ((['O','O','O'] == check[::4]) or (['O','O','O'] == check[2:7:2])):
                 game_status = "Player O wins"
             
+            
     if game_status == '_':    
         if initial_player_value4 == 'O':
             if ((['O','O','O'] == check[:3]) or (['O','O','O'] == check[3:6]) or (['O','O','O'] == check[6:])):
@@ -112,6 +121,7 @@ def win_check(check,initial_player_value3,initial_player_value4):
                 game_status = "Player O wins"
             elif ((['O','O','O'] == check[::4]) or (['O','O','O'] == check[2:7:2])):
                 game_status = "Player O wins"
+                
        
         
         elif initial_player_value4 == 'X' :
@@ -121,13 +131,14 @@ def win_check(check,initial_player_value3,initial_player_value4):
                 game_status = "Player X wins"
             elif ((['X','X','X'] == check[::4]) or (['X','X','X'] == check[2:7:2])):
                 game_status = "Player X wins"
-       
+                
+    
     draw_check = ''.join(str(x) for x in check)
     #print(draw_check)
     #sleep(5)
     if draw_check.isalpha():
         game_status ="Game draws"
-        turns = [1,2,3,4,5,6,7,8,9]
+        
     
     
     
@@ -161,16 +172,17 @@ while replay == "yes":
     #global game_status
     if decide_first == 1:
         player_turn(initial_player_value[0],initial_player_value[1])
-        game_board(turns)
-        win_check(turns,initial_player_value[0],initial_player_value[1])
+        #game_board(turns)
+        #win_check(turns,initial_player_value[0],initial_player_value[1])
     else:
         player_turn(initial_player_value[1],initial_player_value[0])
-        game_board(turns)
-        win_check(turns,initial_player_value[1],initial_player_value[0])
+        #game_board(turns)
+        #win_check(turns,initial_player_value[1],initial_player_value[0])
     
     #win_check(turns,tuple(initial_player_value))    
     if game_status != '_':
         print(game_status)
+        game_status = '_'
         replay = input("Do you want to play again?\n")
         turns = [1,2,3,4,5,6,7,8,9]
     
