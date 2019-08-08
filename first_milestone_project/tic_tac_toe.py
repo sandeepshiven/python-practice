@@ -185,6 +185,7 @@ while replay == "yes":
         game_status = '_'
         replay = input("Do you want to play again?\n")
         turns = [1,2,3,4,5,6,7,8,9]
+        decide_first = randint(1,2)
     
 
 
