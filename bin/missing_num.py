@@ -15,12 +15,12 @@ def find_missing():
     if size ==1:
         return 2
     arr.sort()
-    for i in range(1,size):
+    for i in range(1,size+1):
         if i not in arr:
             return (i)
             
 for i in range(test_case):
-    print(int(find_missing()))
+    print(find_missing())
 
 
 
