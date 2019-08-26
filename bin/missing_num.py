@@ -1,10 +1,12 @@
-from tkinter import * 
-root = Tk() 
-root.geometry('300x30') 
-root.title("First Tkinter Window") 
-root.mainloop() 
+from array import Array2D
 
+valueList = Array( 100 )
 
+for i in range( len( valueList ) ) :
+    valueList[ i ] = random.random()
+# Print the values, one per line.
+for value in valueList :
+    print( value )
 
 
 
