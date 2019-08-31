@@ -8,12 +8,18 @@ Created on Sat Aug 31 22:53:05 2019
 
 import pdb
 
+pdb.set_trace()
 x = [1,2,3]
 
 y = 4
 
 z = 5
 
-print(y+z)
+result = y+z
 
-print(x+y)
+print(result)
+
+
+result1 = x + y
+
+print(result1)
