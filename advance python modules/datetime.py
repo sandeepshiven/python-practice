@@ -6,11 +6,17 @@ Created on Mon Aug 26 19:37:19 2019
 @author: sandeep
 """
 
-import datetime
+from datetime import datetime
 
-c_date = datetime.time.
+#datetime object cotaining current date and time
 
-print(c_date)
+now = datetime.now()
+
+print("now =",now)
+
+#dd/mm/yy H:M:S
+c_time = now.strftime("%d/%m/%Y   %r")
+print(c_time)
 
 
 
