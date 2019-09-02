@@ -26,11 +26,11 @@ string1 = 'my name is sandeep shiven my name is sandeep sandeep is is is is my m
  
 print('\n\n',Counter(string1.split()))
 
-c = Counter(string1.split()) # creates a counter object
+c = dict(Counter(string1.split())) # creates a counter object
 
 print('\n\n',c)
 
-print('\n\n',c.most_common(2),'\n\n') # returns list of the two most common 
+#print('\n\n',c.most_common(2),'\n\n') # returns list of the two most common 
 
 
 list1 = Counter(my_list)
