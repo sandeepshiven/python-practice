@@ -6,4 +6,4 @@ Created on Wed Jul  3 22:22:02 2019
 @author: sandeep shiven
 """
 
-print('My name is Sandeep Shiven')
+print(help(int))
