@@ -6,7 +6,7 @@ class Animal():
 
 
 
-class Cat(Animal):
+class Cat(Animal): # on passing animal class in cat class cat class has inherited all the properties of the animal class 
     pass
 
 amy = Cat()
