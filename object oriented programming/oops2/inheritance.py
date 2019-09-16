@@ -16,3 +16,5 @@ print(Cat.cool)
 print(Animal.cool)
 
 print(isinstance(amy,Cat))   # isinstance checks if the object is made of the same class
+print(isinstance(amy,Animal))
+print(isinstance(amy,object))
