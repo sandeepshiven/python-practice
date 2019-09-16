@@ -23,6 +23,7 @@ class Deck():
     def __init__(self):
         self.no_of_cards = 52
         self.cards = []
+        # self.cards = [Card(value,suit) for suit in suts for value in values]  easy way
         for suit in Deck.suits:
             for value in Deck.values:
                 self.cards.append(Card(suit,value))
@@ -36,10 +37,11 @@ class Deck():
         return f"Deck of {self.no_of_cards} cards"
 
     def _deal(self,num):
+        count = self.count()
         cards_dealt = []
-        if self.no_of_cards is 0:
+        if count is 0:
             raise ValueError("All cards has been dealt.")
-        elif num > self.no_of_cards:
+        elif num > count:
             for _ in self.cards:
                 cards_dealt.append(self.cards.pop())
                 self.no_of_cards -= 1
@@ -49,6 +51,20 @@ class Deck():
                 cards_dealt.append(self.cards.pop())
                 self.no_of_cards -= 1
             return cards_dealt
+
+
+
+    '''        a easy way
+
+	def _deal(self, num):
+		count = self.count()
+		actual = min([count,num])
+		if count == 0:
+			raise ValueError("All cards have been dealt")
+		cards = self.cards[-actual:]
+		self.cards = self.cards[:-actual]
+		return cards
+        '''
                 
     def shuffle(self):
         if self.no_of_cards < 52:
@@ -56,22 +72,26 @@ class Deck():
         random.shuffle(self.cards)
 
     def deal_card(self):
-        a_card = self._deal(1)
-        return a_card
+       return self._deal(1)[0]
+        
 
     def deal_hand(self,hands):
-        deal_cards = self._deal(hands)
-        return deal_cards
+        return self._deal(hands)
 
     
-
+c = Card(12,'as')
+print(c)
+print(c.suit,c.value)
 d = Deck()
 d.shuffle()
 card = d.deal_card()
 print(card)
+print(f"There are {d.count()} cards in deck")
 hand = d.deal_hand(50)
+print(f"There are {d.count()} cards in deck")
 card2 = d.deal_card()
 print(card2)
+print(f"There are {d.count()} cards in deck")
 print(d.cards)
 print(hand)
 card2 = d.deal_card()
