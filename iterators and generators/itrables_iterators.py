@@ -3,7 +3,7 @@
 
     iterable = an object which will return an iterator when iter() is called on it 
 '''
-string = 'lkjsflgaslg'
+string = 'lkjsflgaslg' # string is an iterable
 try:
     print(next(string))
 except:
@@ -21,6 +21,17 @@ except:
     print("TypeError: 'list' object is not an iterator")
 
 l = iter(l)
+print(next(l))
+print(next(l))
+print(next(l))
+print(next(l))
+print(next(l))
+print(next(l))
+print(next(l))
+print(next(l))
+print(next(l))
+print(next(l))
+print(next(l))
 print(next(l))
 print(next(l))
 print(next(l))
