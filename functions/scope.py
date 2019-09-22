@@ -62,3 +62,7 @@ func1()
 
 print('Now x is changed to',x)
 
+func1()
+
+
+print('Now x is changed to',x)
