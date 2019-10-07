@@ -74,23 +74,9 @@ class Deck():
         return self._deal(hands)
 
     
-c = Card(12,'as')
-print(c)
-print(c.suit,c.value)
-d = Deck()
-d.shuffle()
-card = d.deal_card()
-print(card)
-print(f"There are {d.count()} cards in deck")
-hand = d.deal_hand(50)
-print(f"There are {d.count()} cards in deck")
-card2 = d.deal_card()
-print(card2)
-print(f"There are {d.count()} cards in deck")
-print(d.cards)
-print(hand)
-card2 = d.deal_card()
-     
+dec = Deck()
+ca = dec.deal_card()
+print(isinstance(ca,Card))
 
 
 
