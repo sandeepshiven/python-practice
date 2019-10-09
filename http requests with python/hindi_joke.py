@@ -2,7 +2,8 @@ import pyfiglet
 import termcolor
 from random import choice
 import requests
-
+import time
+start = time.time()
 
 text = pyfiglet.figlet_format("Hindi Jokes" )
 color = choice(['grey','red','green','yellow','blue','magenta','cyan','white'])
@@ -25,5 +26,5 @@ print("Showing you one!!!\n\n")
 
 the_joke = choice(data)
 print(the_joke['joke'])
-
+print(f"Time taken: {time.time()-start}")
 

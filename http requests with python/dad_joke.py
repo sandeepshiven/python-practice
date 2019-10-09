@@ -2,6 +2,8 @@ import pyfiglet
 import termcolor
 from random import choice
 import requests
+import time
+
 
 
 text = pyfiglet.figlet_format("Dad Joke 3000" )
@@ -16,7 +18,7 @@ print(termcolor.colored(text,color, attrs=[attri1, attri2]))
 the_search = input("Welcome to the awefull dad jokes!\nOn which topic do you want awefull jokes: ")
 
 
-
+start = time.time()
 url = "https://www.icanhazdadjoke.com/search"
 
 response = requests.get(
@@ -35,3 +37,4 @@ if len(data) != 0:
 else:
     print(f"There are no jokes on {the_search}")
 
+print(f"Time taken: {time.time()-start}")
