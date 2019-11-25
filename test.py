@@ -1,2 +1,5 @@
-data = 'invalid syntax'
-print(data[:7] + "sa" + data[7:])
+import requests
+
+url = 'http://www.google.com'
+response = requests.get(url).content
+print(response)
