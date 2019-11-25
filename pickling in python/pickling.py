@@ -1,7 +1,4 @@
-import jsonpickle
-
-
-
+import pickle
 
 class Account:
     
@@ -27,10 +24,10 @@ class Account:
             
             
     def __str__(self):
-        return f"Account owner : {self.owner}\nAccount Balance : {self.balance}"
+        return f" Account owner : {self.owner}\nAccount Balance : {self.balance}"
 
 
-''' making instance for pickling and dumping it into json file to access information or instances 
+''' making instance for pickling and dumping it into file to access information or instances
 
 sa = Account("Sandeep",1000)
 sa.deposit(500)
@@ -40,29 +37,26 @@ an = Account("Ansh",6000)
 an.deposit(500)
 an.withdraw(2000)
 
-with open('accounts.json','w') as file:
-
-    acc1 = jsonpickle.encode(sa)
-    acc2 = jsonpickle.encode(an)
-    file.write(acc1)
-    file.write('\n')
-    file.write(acc2)
+with open('accounts.pickle','wb') as file:
+    pickle.dump(sa,file)
+    pickle.dump(an,file)
 
 '''
 
 # accesing the data again
-with open('accounts.json','r') as file:
-    data = file.readline()
-    data1 = jsonpickle.decode(data)
-    data = file.readline()
-    data2 = jsonpickle.decode(data) 
 
+with open('accounts.pickle','rb') as file:
+    data1 = pickle.load(file)
+    data2 = pickle.load(file)
+    
+print(data1.owner)
+print(data2.owner)
+print(data1.balance)
+print(data2.balance)
 
-print(data1)
-print(data2)
 data1.deposit(500)
 data1.withdraw(200)
+
 data2.deposit(500)
 data2.withdraw(200)
-print(data1)
-print(data2)
+

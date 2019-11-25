@@ -10,5 +10,6 @@ with open('fighters.csv','r') as file:
 
 with open('fighters.csv','r') as file:
     data = DictReader(file) # converts into Ordered dictionary
+    print(data)
     for i in data:
-        print(i['Name'])
+        print(dict(i))
