@@ -18,7 +18,7 @@ with open("quote_data.csv","w") as file:
             author,author_link = quote.find(class_ = "author").get_text(),quote.find('a')['href']
             csv_writer.writerow([q_text,author,"http://quotes.toscrape.com"+author_link])
         if(soup.find(class_ = 'next')==None):
-            break;
+            break
         page_no += 1
 
 
